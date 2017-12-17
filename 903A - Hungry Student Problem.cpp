@@ -1,6 +1,19 @@
-#include <stdio.h>
-int test,x;
+#include <bits/stdc++.h>
+#define optimizar_io ios_base::sync_with_stdio(0);cin.tie(0);
+using namespace std;
+long long test,idx,x;
+bool ban;
 int main(){
-    scanf("%i", &test);
-    while(test--)scanf("%i", &x),printf(x<=2 || x==4 || x==5 || x==8 || x==11?"NO\n":"YES\n");
+    optimizar_io
+    cin>>test;
+    while(test--){
+        cin>>x;
+        idx=0,ban=false;
+        while(idx*3<=x){
+            if((x-(idx*3))%7==0)ban=true;
+            idx++;
+        }
+        cout<<(ban?"YES\n":"NO\n");
+    }
+    return 0;
 }
