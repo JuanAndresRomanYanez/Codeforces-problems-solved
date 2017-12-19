@@ -1,11 +1,12 @@
-#include <bits/stdc++.h>
-#define optimizar_io ios_base::sync_with_stdio(0);cin.tie(0);
-using namespace std;
-string s;
-int main(){
-    cin>>s;
-    if(s[0]>'a' && s[0]<'h' && s[1]>'1' && s[1]<'8' )cout<<"8\n";
-    else if( (s[0]=='a' || s[0]=='h')&& (s[1]=='1' || s[1]=='8') )cout<<"3\n";
-    else if( ( ( s[0]=='a' || s[0]=='h' ) && ( s[1]>'1' && s[1]<'8' ) ) || ((s[1]=='1' || s[1]=='8') && (s[0]>'a' && s[0]<'h') ) )cout<<"5\n";
-    else cout<<"0\n";
+#include <stdio.h>
+char s[2];
+int x,y;
+int main() {
+  scanf("%s", s);
+  if (s[0] == 'a' || s[0] == 'h')x=2;
+  else x=3;
+  if (s[1] == '1' || s[1] == '8')y=2;
+  else y=3;
+  //eje x por eje y menos la posicion en la que esta el rey XD
+  printf("%i\n", x*y-1);
 }
